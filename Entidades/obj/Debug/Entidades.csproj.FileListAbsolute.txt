@@ -1,6 +1,0 @@
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\bin\Debug\Entidades.dll
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\obj\Debug\Entidades.dll
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Entidades\obj\Debug\Entidades.pdb

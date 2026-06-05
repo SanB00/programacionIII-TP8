@@ -1,9 +1,0 @@
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\bin\Debug\Datos.dll
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\bin\Debug\Datos.pdb
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\bin\Debug\Entidades.dll
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\bin\Debug\Entidades.pdb
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\obj\Debug\Datos.csproj.Up2Date
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\obj\Debug\Datos.dll
-C:\Users\Norka Natalia\Documents\git\programacionIII-TP8\Datos\obj\Debug\Datos.pdb
