@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Norka Natalia\\Documents\\git\\programacionIII-TP8\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA22DB4A-933A-42CA-B362-F90C1759D7A9}|Vistas\\Vistas.csproj|c:\\users\\norka natalia\\documents\\git\\programacioniii-tp8\\vistas\\principal.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{AA22DB4A-933A-42CA-B362-F90C1759D7A9}|Vistas\\Vistas.csproj|solutionrelative:vistas\\principal.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA22DB4A-933A-42CA-B362-F90C1759D7A9}|Vistas\\Vistas.csproj|c:\\users\\norka natalia\\documents\\git\\programacioniii-tp8\\vistas\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AA22DB4A-933A-42CA-B362-F90C1759D7A9}|Vistas\\Vistas.csproj|solutionrelative:vistas\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Principal.Master",
+              "DocumentMoniker": "C:\\Users\\Norka Natalia\\Documents\\git\\programacionIII-TP8\\Vistas\\Principal.Master",
+              "RelativeDocumentMoniker": "Vistas\\Principal.Master",
+              "ToolTip": "C:\\Users\\Norka Natalia\\Documents\\git\\programacionIII-TP8\\Vistas\\Principal.Master",
+              "RelativeToolTip": "Vistas\\Principal.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-05T19:04:34.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AgregarSucursal.aspx",
+              "DocumentMoniker": "C:\\Users\\Norka Natalia\\Documents\\git\\programacionIII-TP8\\Vistas\\AgregarSucursal.aspx",
+              "RelativeDocumentMoniker": "Vistas\\AgregarSucursal.aspx",
+              "ToolTip": "C:\\Users\\Norka Natalia\\Documents\\git\\programacionIII-TP8\\Vistas\\AgregarSucursal.aspx",
+              "RelativeToolTip": "Vistas\\AgregarSucursal.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-05T19:03:08.97Z",
+              "EditorCaption": ""
             }
           ]
         }

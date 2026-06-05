@@ -75,7 +75,7 @@ dotnet_diagnostic.format.severity = warning
 
 # Prevent multiple consecutive blank lines
 dotnet_style_allow_multiple_blank_lines_experimental = false
-dotnet_diagnostic.IDE2000.severity = warning
+dotnet_diagnostic.IDE2000.severity = error
 
 # 1. Global Web & ASPX Formatting Rules
 # -------------------------------------------------------------
