@@ -7,8 +7,7 @@ namespace Datos {
     public class Conexion {
         private const string NOMBRE_BD = "BDSucursales";
         //private const string cadenaConexion = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
-        private const string cadenaConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
-        // cadenaParaEntrega
+        private const string cadenaConexion = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";        // cadenaParaEntrega
         // 	    private const string cadenaConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
         // 
         // Franco
@@ -33,37 +32,6 @@ namespace Datos {
 
         }
 
-        public SqlConnection obtenerConexion() {
-            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
-            try {
-                sqlConnection.Open();
-                return sqlConnection;
-            } catch (Exception exception) {
-                return null;
-            }
-        }
-        public SqlDataAdapter obtenerAdaptador(string consultaSql) {
-            SqlDataAdapter sqlDataAdapter;
-            try {
-                sqlDataAdapter = new SqlDataAdapter(consultaSql, obtenerConexion());
-                return sqlDataAdapter;
-            } catch (Exception exception) {
-                return null;
-            }
-        }
-
-        public int ejecutarProcedimientoAlmacenado(SqlCommand comandoSQL, string nombreProcedimientoAlmacenado) {
-            int filasCambiadas;
-            SqlConnection conexion = obtenerConexion();
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand = comandoSQL;
-            sqlCommand.Connection = conexion;
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.CommandText = nombreProcedimientoAlmacenado;
-            filasCambiadas = sqlCommand.ExecuteNonQuery();
-            return filasCambiadas;
-        }
-        #region ANTERIOR CLASE CONEXION.CS
         public string obtenerCadenaDeConexion(string nombreBBDD = NOMBRE_BD) {
             const string webconfigAttribute = "dbBase";
             try {
@@ -137,6 +105,5 @@ namespace Datos {
             string consultaSQL = $"SELECT * FROM Sucursal WHERE UPPER(NombreSucursal) LIKE '{nombre.ToUpper()}%'";
             return this.ejecutarConsulta(consultaSQL); ;
         }
-        #endregion ANTERIOR CLASE CONEXION.CS
     }
 }
