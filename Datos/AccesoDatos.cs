@@ -6,85 +6,105 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos {
-    public class AccesoDatos {
-        // private string rutaBD = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
-        private const string rutaBD = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
+namespace Datos
+{
+    public class AccesoDatos
+    {
+        private string rutaBD = @"Data Source=localhost;Initial Catalog=BDSucursales;Integrated Security=True";
+        //private string rutaBD = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
+        //private const string rutaBD = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
         //private string rutaBD = @"Data Source =.\SQLEXPRESS;Initial Catalog = BDSucursales; Integrated Security = True;";
-        public AccesoDatos() {
+        public AccesoDatos() 
+        {
 
         }
 
-        private SqlConnection ObtenerConexion() {
+        private SqlConnection obtenerConexion()
+        {
             SqlConnection cn = new SqlConnection(rutaBD);
-            try {
+            try
+            {
                 cn.Open();
                 return cn;
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 return null;
             }
         }
 
-        private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn) {
+        private SqlDataAdapter obtenerAdaptador(String consultaSql, SqlConnection cn)
+        {
             SqlDataAdapter adaptador;
-            try {
+            try
+            {
                 adaptador = new SqlDataAdapter(consultaSql, cn);
                 return adaptador;
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 return null;
             }
         }
 
-        public Boolean TestConexion() {
-            SqlConnection cn = ObtenerConexion();
-            if (cn != null) {
+        public Boolean testConexion()
+        {
+            SqlConnection cn = obtenerConexion();
+            if (cn != null)
+            {
                 cn.Close();
                 return true;
             }
             return false;
         }
-        public DataTable ObtenerTabla(String NombreTabla, String Sql) {
+        public DataTable obtenerTabla(String nombreTabla, String sql)
+        {
             DataSet ds = new DataSet();
-            SqlConnection Conexion = ObtenerConexion();
-            SqlDataAdapter adp = new SqlDataAdapter(Sql, Conexion);
-            adp.Fill(ds, NombreTabla);
-            Conexion.Close();
-            return ds.Tables[NombreTabla];
+            SqlConnection conexion = obtenerConexion();
+            SqlDataAdapter adp = new SqlDataAdapter(sql, conexion);
+            adp.Fill(ds, nombreTabla);
+            conexion.Close();
+            return ds.Tables[nombreTabla];
         }
-        public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP) {
-            int FilasCambiadas;
-            SqlConnection Conexion = ObtenerConexion();
+        public int ejecutarProcedimientoAlmacenado(SqlCommand comando, String nombreSP)
+        {
+            int filasCambiadas;
+            SqlConnection conexion = obtenerConexion();
             SqlCommand cmd = new SqlCommand();
-            cmd = Comando;
-            cmd.Connection = Conexion;
+            cmd = comando;
+            cmd.Connection = conexion;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = NombreSP;
-            FilasCambiadas = cmd.ExecuteNonQuery();
-            Conexion.Close();
-            return FilasCambiadas;
+            cmd.CommandText = nombreSP;
+            filasCambiadas = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return filasCambiadas;
         }
 
-        public Boolean existe(String consulta) {
+        public Boolean existe(String consulta)
+        {
             Boolean estado = false;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlConnection conexion = obtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
             SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read()) {
+            if (datos.Read())
+            {
                 estado = true;
             }
             return estado;
         }
 
-        public int ObtenerMaximo(String consulta) {
+        public int obtenerMaximo(String consulta)
+        {
             int max = 0;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlConnection conexion = obtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
             SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read()) {
+            if (datos.Read())
+            {
                 max = Convert.ToInt32(datos[0].ToString());
             }
             return max;
         }
 
-    }
-}
+    } 
+} 

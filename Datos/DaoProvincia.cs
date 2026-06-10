@@ -14,7 +14,7 @@ namespace Datos
         AccesoDatos dp = new AccesoDatos();
         public Provincia getProvincia(Provincia prov)
         {
-            DataTable tabla = dp.ObtenerTabla("Provincia", "Select * from Provincia where Id_Provincia=" + prov.getIdProvincia());
+            DataTable tabla = dp.obtenerTabla("Provincia", "Select * from Provincia where Id_Provincia=" + prov.getIdProvincia());
             prov.setIdProvincia(Convert.ToInt32(tabla.Rows[0][0].ToString()));
             prov.setDescripcionProvincia(tabla.Rows[0][1].ToString());
             return prov;
@@ -28,7 +28,7 @@ namespace Datos
 
         public DataTable getTablaProvincia()
         {
-            return dp.ObtenerTabla("Provincia", "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia");
+            return dp.obtenerTabla("Provincia", "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia");
         }
     }
    
