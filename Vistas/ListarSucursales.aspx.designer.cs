@@ -11,7 +11,8 @@ namespace Vistas
 {
 
 
-    public partial class ListarSucursales {
+    public partial class ListarSucursales
+    {
 
         /// <summary>
         /// txtNombre control.

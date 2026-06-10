@@ -1,8 +1,8 @@
-﻿using Entidades;
-using Negocio;
+﻿using Negocio;
 using System;
 using System.Data;
-using System.Web.DynamicData;
+using System.Text.RegularExpressions;
+
 
 namespace Vistas {
     public partial class ListarSucursales : System.Web.UI.Page {
@@ -23,13 +23,34 @@ namespace Vistas {
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e) {
-            int idProvincia = int.Parse(txtBusqueda.Text);
-            ///  Sucursal objSucursal = objNegocioSucursal.get(idProvincia);
+            string strIdSucursal = Common.eliminarEspaciosDelTexto(txtBusqueda.Text);
+            if (!Common.esUnNroValidoMayorACero(strIdSucursal)) {
+                Common.mostrarMensajeEnAlerta("Por favor, ingrese un número válido mayor a cero para filtrar por ID sucursal.", this);
+                cargarListaSucursales();
+                return;
+            }
+            int idProvincia = int.Parse(strIdSucursal);
+            /// Sucursal objSucursal = objNegocioSucursal.get(idProvincia);
             DataTable dataTable = objNegocioSucursal.getPorId(idProvincia);
-
             gvSucursales.DataSource = dataTable;
             gvSucursales.DataBind();
             lblCantResultados.Text = $"Hay {dataTable.Rows.Count} resultado/s";
+        }
+    }
+
+    public class Common {
+        public static string eliminarEspaciosDelTexto(string texto) {
+            return Regex.Replace(texto.Trim(), @"\s+", " ");
+        }
+        public static bool esUnNroValidoMayorACero(string texto) {
+            return int.TryParse(texto, out int nroValidar) && nroValidar > 0; //texto.All(char.IsDigit)
+        }
+        public static void mostrarMensajeEnAlerta(string mensaje, System.Web.UI.Page page) {
+            string safeMessage = mensaje.Replace("'", "\\'").Replace("\n", "\\n");
+            page.ClientScript.RegisterStartupScript(page.GetType(),
+                "alert",
+                $"alert('{safeMessage}');",
+                true);
         }
     }
 }

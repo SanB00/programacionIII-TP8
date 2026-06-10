@@ -4,6 +4,7 @@ using System;
 using System.Data;
 
 namespace Negocio {
+
     public class NegocioSucursal {
         public DataTable getTabla() {
             DaoSucursal dao = new DaoSucursal();
@@ -13,7 +14,7 @@ namespace Negocio {
             DaoSucursal dao = new DaoSucursal();
             Sucursal objSucursal = new Sucursal();
             objSucursal.setIdSucursal(id);
-            return dao.getSucursal(objSucursal);
+            return dao.getTablaPorId(objSucursal);
         }
 
         public bool eliminarSucursal(int id) {

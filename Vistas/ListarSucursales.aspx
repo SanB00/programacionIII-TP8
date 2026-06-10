@@ -45,10 +45,12 @@
             <td class="colBordes">&nbsp;</td>
             <td class="colEtiquetas">&nbsp;</td>
             <td class="colCampos">
+                <!--
                 <asp:Label ID="lblError" runat="server" Text="No existe la sucursal" Visible="False" />
                 &nbsp; 
                 <asp:CompareValidator ID="cvFiltrar" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="Debe ingresar un número mayor a 0" Operator="GreaterThan" Type="Integer" ValueToCompare="0">*</asp:CompareValidator>
                 <asp:ValidationSummary ID="vsErrores" runat="server" ShowMessageBox="true" ShowSummary="true" />
+                -->
             </td>
             <td class="colValidacion">&nbsp; </td>
             <td class="colBordes">&nbsp;</td>

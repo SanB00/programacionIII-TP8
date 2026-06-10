@@ -1,23 +1,26 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Datos {
+
     public class DaoSucursal {
         AccesoDatos ds = new AccesoDatos();
+        const string CONSULTA_SUCURSAL = "" +
+            "SELECT s.Id_Sucursal, s.NombreSucursal, s.DescripcionSucursal, " +
+                "p.DescripcionProvincia AS PROVINCIA, s.DireccionSucursal " +
+                "FROM Sucursal s " +
+                "INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia";
 
-        public DataTable getSucursal(Sucursal sucu) {
+        public Sucursal getSucursal(Sucursal sucu) {
             DataTable tabla = ds.ObtenerTabla("Sucursal", "Select * from sucursal where Id_sucursal=" + sucu.getIdSucursal());
-            /* sucu.setIdSucursal(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-             sucu.setNombreSucursal(tabla.Rows[0][1].ToString());
-             sucu.setDescripcionSucursal(tabla.Rows[0][2].ToString());
-            */
-            return tabla;
+            sucu.setIdSucursal(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            sucu.setNombreSucursal(tabla.Rows[0][1].ToString());
+            sucu.setDescripcionSucursal(tabla.Rows[0][2].ToString());
+            return sucu;
         }
 
         public Boolean existeSucursal(Sucursal sucu) {
@@ -25,12 +28,12 @@ namespace Datos {
             return ds.existe(consulta);
         }
 
+        public DataTable getTablaPorId(Sucursal obj) {
+            return ds.ObtenerTabla("Sucursal", CONSULTA_SUCURSAL + " AND s.Id_sucursal=" + obj.getIdSucursal());
+        }
+
         public DataTable getTablaSucursales() {
-            return ds.ObtenerTabla("Sucursales",
-                "SELECT s.Id_Sucursal, s.NombreSucursal, s.DescripcionSucursal, " +
-                "p.DescripcionProvincia AS PROVINCIA, s.DireccionSucursal " +
-                "FROM Sucursal s " +
-                "INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia");
+            return ds.ObtenerTabla("Sucursales", CONSULTA_SUCURSAL);
         }
 
 

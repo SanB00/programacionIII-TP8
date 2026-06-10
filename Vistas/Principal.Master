@@ -76,6 +76,9 @@
             <br />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+            <br />
+            <hr />
+            Grupo 18 - TP8
         </div>
     </form>
 </body>
