@@ -7,7 +7,8 @@ namespace Datos {
     public class Conexion {
         private const string NOMBRE_BD = "BDSucursales";
         //private const string cadenaConexion = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
-        private const string cadenaConexion = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";        // cadenaParaEntrega
+        private const string cadenaConexion = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
+        // cadenaParaEntrega
         // 	    private const string cadenaConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
         // 
         // Franco
