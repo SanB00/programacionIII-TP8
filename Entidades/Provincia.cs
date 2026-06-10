@@ -1,26 +1,22 @@
-﻿namespace Entidades {
-    public class Provincia {
-        private string id;
-        private string nombre;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-        public Provincia() {
+namespace Entidades
+{
+    public class Provincia
+    {
+        private int idProvincia;
+        private string descripcionProvincia;
 
-        }
+        public Provincia() { }
 
-        public void setId(string id) {
-            this.id = id;
-        }
+        public int getIdProvincia() { return idProvincia; }
+        public void setIdProvincia(int id) { idProvincia = id; }
 
-        public void setNombre(string nombre) {
-            this.nombre = nombre;
-        }
-
-        public string getId() {
-            return id;
-        }
-
-        public string getNombre() {
-            return nombre;
-        }
+        public string getDescripcionProvincia() { return descripcionProvincia; }
+        public void setDescripcionProvincia(string d) { descripcionProvincia = d; }
     }
 }
