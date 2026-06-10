@@ -106,6 +106,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{d8295b54-97d6-456b-9f1c-9a596b61baf5}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{0dd10aa3-849a-420f-8e6b-3fd79cc8b9f9}</Project>
       <Name>Entidades</Name>

@@ -31,11 +31,12 @@ namespace Datos
         public DataTable getTablaSucursales()
         {
             return ds.ObtenerTabla("Sucursales",
-                "SELECT s.ID_SUCURSAL, s.NOMBRE, s.DESCRIPCION, " +
-                "p.DESCRIPCION AS PROVINCIA, s.DIRECCION " +
-                "FROM SUCURSALES s " +
-                "INNER JOIN PROVINCIA p ON s.ID_PROVINCIA = p.ID_PROVINCIA");
+                "SELECT s.Id_Sucursal, s.NombreSucursal, s.DescripcionSucursal, " +
+                "p.DescripcionProvincia AS PROVINCIA, s.DireccionSucursal " +
+                "FROM Sucursal s " +
+                "INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia");
         }
+
 
         public int eliminarSucursal(Sucursal sucu)
         {

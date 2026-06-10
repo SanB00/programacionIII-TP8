@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Datos {
     public class AccesoDatos {
-        //private string rutaBD = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
-        //        private string rutaBD = @"Data Source =.\SQLEXPRESS;Initial Catalog = BDSucursales; Integrated Security = True;";
+        // private string rutaBD = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
         private const string rutaBD = @"Initial Catalog=BDSucursales;Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True";
-
+        //private string rutaBD = @"Data Source =.\SQLEXPRESS;Initial Catalog = BDSucursales; Integrated Security = True;";
         public AccesoDatos() {
 
         }
