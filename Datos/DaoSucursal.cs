@@ -59,10 +59,21 @@ namespace Datos {
 
         private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucu) {
             SqlParameter SqlParametros = new SqlParameter();
+
             SqlParametros = Comando.Parameters.Add("@ID_SUCURSAL", SqlDbType.Int);
             SqlParametros.Value = sucu.getIdSucursal();
+
             SqlParametros = Comando.Parameters.Add("@NombreSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucu.getNombreSucursal();
+
+            SqlParametros = Comando.Parameters.Add("@DescripcionSucursal", SqlDbType.VarChar);
+            SqlParametros.Value = sucu.getDescripcionSucursal();
+
+            SqlParametros = Comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar);
+            SqlParametros.Value = sucu.getDireccionSucursal();
+
+            SqlParametros = Comando.Parameters.Add("@Id_ProvinciaSucursal", SqlDbType.Int);
+            SqlParametros.Value = sucu.getIdProvinciaSucursal();
         }
     }
 

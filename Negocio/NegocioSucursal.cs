@@ -28,23 +28,28 @@ namespace Negocio {
                 return false;
         }
 
-        public bool agregarSucursal(String nombre) {
-            int cantFilas = 0;
+        public bool agregarSucursal(string nombre, string descripcion, string direccion, int idProvincia) {
+            {
+                int cantFilas = 0;
 
-            Sucursal objSucursal = new Sucursal();
-            objSucursal.setNombreSucursal(nombre);
+                Sucursal sucu = new Sucursal();
+                sucu.setNombreSucursal(nombre);
+                sucu.setDescripcionSucursal(descripcion);
+                sucu.setDireccionSucursal(direccion);
+                sucu.setIdProvinciaSucursal(idProvincia);
 
-            DaoSucursal dao = new DaoSucursal();
-            if (dao.existeSucursal(objSucursal) == false) {
-                cantFilas = dao.agregarSucursal(objSucursal);
+                DaoSucursal dao = new DaoSucursal();
+                if (dao.existeSucursal(sucu) == false) {
+                    cantFilas = dao.agregarSucursal(sucu);
+                }
+
+                if (cantFilas == 1)
+                    return true;
+                else
+                    return false;
             }
-
-            if (cantFilas == 1)
-                return true;
-            else
-                return false;
         }
-    }
 
+    }
 }
 
