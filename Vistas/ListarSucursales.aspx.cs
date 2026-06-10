@@ -1,24 +1,23 @@
 ﻿using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data;
 
-namespace Vistas
-{
-    public partial class ListarSucursales : System.Web.UI.Page
-    {
-        NegocioSucursal neg = new NegocioSucursal();
+namespace Vistas {
+    public partial class ListarSucursales : System.Web.UI.Page {
+        NegocioSucursal objNegocioSucursal = new NegocioSucursal();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                grdSucursales.DataSource = neg.getTabla();
-                grdSucursales.DataBind();
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>")]
+        protected void Page_Load(object sender, EventArgs e) {
+            if (!IsPostBack) {
+                cargarListaSucursales();
             }
+        }
+
+        private void cargarListaSucursales() {
+            DataTable dataTable = objNegocioSucursal.getTabla();
+            gvSucursales.DataSource = dataTable;
+            gvSucursales.DataBind();
+            lblCantResultados.Text = $"Hay {dataTable.Rows.Count} resultado/s";
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarSucursales.aspx.cs" Inherits="Vistas.ListarSucursales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListadoDeSucursales.aspx.cs" Inherits="Vistas.ListadoDeSucursales" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -36,8 +36,9 @@
             <td class="colBordes">&nbsp;</td>
             <td class="colEtiquetas"></td>
             <td class="colCampos">
-                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
-                <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" /></td>
+                <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" />
+
+                <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click1" Text="Mostrar todos" /></td>
             <td class="colValidacion">&nbsp;</td>
             <td class="colBordes">&nbsp;</td>
         </tr>

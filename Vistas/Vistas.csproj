@@ -61,12 +61,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EliminarSucursal.aspx" />
     <Content Include="Web.config" />
     <Content Include="AgregarSucursal.aspx" />
     <Content Include="ListarSucursales.aspx" />
-    <Content Include="EliminarSucursales.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EliminarSucursal.aspx.cs">
+      <DependentUpon>EliminarSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarSucursal.aspx.designer.cs">
+      <DependentUpon>EliminarSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AgregarSucursal.aspx.cs">
       <DependentUpon>AgregarSucursal.aspx</DependentUpon>
@@ -82,15 +96,9 @@
     <Compile Include="ListarSucursales.aspx.designer.cs">
       <DependentUpon>ListarSucursales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EliminarSucursales.aspx.cs">
-      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EliminarSucursales.aspx.designer.cs">
-      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
