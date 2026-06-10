@@ -36,7 +36,7 @@
             <td class="colBordes">&nbsp;</td>
             <td class="colEtiquetas"></td>
             <td class="colCampos">
-                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                 <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" /></td>
             <td class="colValidacion">&nbsp;</td>
             <td class="colBordes">&nbsp;</td>

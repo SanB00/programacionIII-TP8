@@ -7,29 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos
-{
-    public class DaoSucursal
-    {
+namespace Datos {
+    public class DaoSucursal {
         AccesoDatos ds = new AccesoDatos();
 
-        public Sucursal getSucursal(Sucursal sucu)
-        {
+        public DataTable getSucursal(Sucursal sucu) {
             DataTable tabla = ds.ObtenerTabla("Sucursal", "Select * from sucursal where Id_sucursal=" + sucu.getIdSucursal());
-            sucu.setIdSucursal(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            sucu.setNombreSucursal(tabla.Rows[0][1].ToString());
-            sucu.setDescripcionSucursal(tabla.Rows[0][2].ToString());
-            return sucu;
+            /* sucu.setIdSucursal(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+             sucu.setNombreSucursal(tabla.Rows[0][1].ToString());
+             sucu.setDescripcionSucursal(tabla.Rows[0][2].ToString());
+            */
+            return tabla;
         }
 
-        public Boolean existeSucursal(Sucursal sucu)
-        {
+        public Boolean existeSucursal(Sucursal sucu) {
             String consulta = "Select * from sucursal where NombreSucursal='" + sucu.getNombreSucursal() + "'";
             return ds.existe(consulta);
         }
 
-        public DataTable getTablaSucursales()
-        {
+        public DataTable getTablaSucursales() {
             return ds.ObtenerTabla("Sucursales",
                 "SELECT s.Id_Sucursal, s.NombreSucursal, s.DescripcionSucursal, " +
                 "p.DescripcionProvincia AS PROVINCIA, s.DireccionSucursal " +
@@ -38,31 +34,27 @@ namespace Datos
         }
 
 
-        public int eliminarSucursal(Sucursal sucu)
-        {
+        public int eliminarSucursal(Sucursal sucu) {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalEliminar(ref comando, sucu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarSucursal");
         }
 
 
-        public int agregarSucursal(Sucursal sucu)
-        {
+        public int agregarSucursal(Sucursal sucu) {
             sucu.setIdSucursal(ds.ObtenerMaximo("SELECT max(ID_SUCURSAL) FROM Sucursal") + 1);
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalAgregar(ref comando, sucu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarSucursal");
         }
 
-        private void ArmarParametrosSucursalEliminar(ref SqlCommand Comando, Sucursal sucu)
-        {
+        private void ArmarParametrosSucursalEliminar(ref SqlCommand Comando, Sucursal sucu) {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@ID_SUCURSAL", SqlDbType.Int);
             SqlParametros.Value = sucu.getIdSucursal();
         }
 
-        private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucu)
-        {
+        private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucu) {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@ID_SUCURSAL", SqlDbType.Int);
             SqlParametros.Value = sucu.getIdSucursal();
