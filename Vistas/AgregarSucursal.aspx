@@ -65,7 +65,7 @@
             <td class="colBordes">&nbsp;</td>
             <td class="colEtiquetas">&nbsp;</td>
             <td class="colCampos">
-                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" /></td>
+                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" /></td>
             <td class="colValidacion">&nbsp;</td>
             <td class="colBordes">&nbsp;</td>
         </tr>
