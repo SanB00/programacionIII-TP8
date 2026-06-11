@@ -36,6 +36,10 @@ namespace Vistas {
             gvSucursales.DataBind();
             lblCantResultados.Text = $"Hay {dataTable.Rows.Count} resultado/s";
         }
+        protected void btnMostrarTodos_Click(object sender, EventArgs e) {
+            txtBusqueda.Text = "";
+            cargarListaSucursales();
+        }
     }
 
     public class Common {

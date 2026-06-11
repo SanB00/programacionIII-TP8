@@ -51,7 +51,7 @@ namespace Datos {
 
         private void armarParametrosSucursalEliminar(ref SqlCommand comando, Sucursal sucu) {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@ID_SUCURSAL", SqlDbType.Int);
+            sqlParametros = comando.Parameters.Add("@IdSucursal", SqlDbType.Int);
             sqlParametros.Value = sucu.getIdSucursal();
         }
 

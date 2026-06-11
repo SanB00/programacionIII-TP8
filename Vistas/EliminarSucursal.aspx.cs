@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 
 namespace Vistas {
     public partial class EliminarSucursal : System.Web.UI.Page {
@@ -8,7 +9,17 @@ namespace Vistas {
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e) {
+            NegocioSucursal negocio = new NegocioSucursal();
 
+            int id = Convert.ToInt32(txtIdSucursal.Text);
+
+            bool eliminado = negocio.eliminarSucursal(id);
+
+            if (eliminado) {
+                lblMensaje.Text = "Sucursal eliminada correctamente";
+            } else {
+                lblMensaje.Text = "No se pudo eliminar la sucursal";
+            }
         }
     }
 }
