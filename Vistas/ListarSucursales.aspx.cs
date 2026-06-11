@@ -29,9 +29,9 @@ namespace Vistas {
                 cargarListaSucursales();
                 return;
             }
-            int idProvincia = int.Parse(strIdSucursal);
-            /// Sucursal objSucursal = objNegocioSucursal.get(idProvincia);
-            DataTable dataTable = objNegocioSucursal.getPorId(idProvincia);
+            int idSucursal = int.Parse(strIdSucursal);
+            /// Sucursal objSucursal = objNegocioSucursal.get(idSucursal);
+            DataTable dataTable = objNegocioSucursal.getPorId(idSucursal);
             gvSucursales.DataSource = dataTable;
             gvSucursales.DataBind();
             lblCantResultados.Text = $"Hay {dataTable.Rows.Count} resultado/s";

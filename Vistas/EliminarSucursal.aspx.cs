@@ -11,9 +11,14 @@ namespace Vistas {
         protected void btnEliminar_Click(object sender, EventArgs e) {
             NegocioSucursal negocio = new NegocioSucursal();
 
-            int id = Convert.ToInt32(txtIdSucursal.Text);
+            string strIdSucursal = Common.eliminarEspaciosDelTexto(txtIdSucursal.Text);
+            if (!Common.esUnNroValidoMayorACero(strIdSucursal)) {
+                Common.mostrarMensajeEnAlerta("Por favor, ingrese un número válido mayor a cero para poder eliminar por ID sucursal.", this);
+                return;
+            }
+            int idSucursal = int.Parse(strIdSucursal);
 
-            bool eliminado = negocio.eliminarSucursal(id);
+            bool eliminado = negocio.eliminarSucursal(idSucursal);
 
             if (eliminado) {
                 lblMensaje.Text = "Sucursal eliminada correctamente";
